@@ -636,15 +636,38 @@ var json = {
 	"categories": []
 };
 
-for (var i = 0; i < json["groups"].length; i++) {
+var getPrice = function getPrice(jsonPrice) {
+	var priceRange = jsonPrice["priceRange"];
+	var price = jsonPrice["price"];
+	var productPrice = null;
 
-	// getting VARS from json
-	var name = json["groups"][i]["name"];
-	var price = json["groups"][i]["price"]["regular"];
-	var hero = json["groups"][i]["name"]["href"];
-	var liNode = document.createElement("LI");
+	if (priceRange === undefined) {
+		productPrice = "$" + price["selling"];
+	} else if (price === undefined) {
+		var low = priceRange["selling"]["low"];
+		var high = priceRange["selling"]["high"];
+		productPrice = "$" + low + " - " + "$" + high;
+	}
+	return productPrice;
+};
+
+var serialize = function serialize(blob) {
+
+	var response = {};
+
+	response["price"] = getPrice(blob);
+	response["name"] = blob["name"];
+	response["hero"] = blob["hero"]["href"];
+
+	return response;
+};
+
+for (var i = 0; i < json["groups"].length; i++) {
+	var response = serialize(json["groups"][i]);
 
 	// creating DOM variables
+	var liNode = document.createElement("LI");
+
 	var panelOuter = document.createElement("DIV");
 	panelOuter.className = "panel panel-default";
 
@@ -654,22 +677,20 @@ for (var i = 0; i < json["groups"].length; i++) {
 	var panelBody = document.createElement("DIV");
 	panelBody.className = "panel-body";
 
-	var nameNode = document.createTextNode(name);
-	var priceNode = document.createTextNode(price);
-	// let textNode = document.createTextNode(name);
+	var heroImg = document.createElement("IMG");
+	heroImg.src = response["hero"];
 
+	var nameNode = document.createTextNode(response["name"]);
+
+	var priceNode = document.createTextNode(response["price"]);
 
 	//appending DOM variables
-	panelHeader.appendChild(nameNode);
-	// panelBody.appendChild(rando);
+	panelHeader.appendChild(heroImg);
+	panelBody.appendChild(nameNode);
+	panelBody.appendChild(priceNode);
 	// panelBody.appendChild(rando);
 	panelOuter.appendChild(panelHeader);
 	panelOuter.appendChild(panelBody);
 	liNode.appendChild(panelOuter);
 	document.getElementById("products").appendChild(liNode);
-
-	// let panelHero = 
-	// let panelDetails
-	// 		 <div class="panel-body">Panel Content</div>
-	// </div>
 }
