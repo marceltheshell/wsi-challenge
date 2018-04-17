@@ -1,8 +1,6 @@
 "use strict";
 
-console.log("here");
-
-var rootUrl = 'https://www.westelm.com/services/catalog/v4/category/shop/new/all-new/index.json';
+var rootUrl = 'https://crossorigin.me/https://www.westelm.com/services/catalog/v4/category/shop/new/all-new/index.json';
 
 var products = [];
 var numberOfProducts = 0;
@@ -19,11 +17,12 @@ var fetchData = function fetchData(url, callback) {
 };
 
 var handleError = function handleError(e) {
-  throw new Error("There was an error fetching this data with error: " + e);
+  throw new Error('There was an error fetching this data with error: ' + e);
 };
 
 fetchData(rootUrl, function (json) {
   products = json.groups;
-  console.log(products);
+  // console.log("here")
+  // console.log("products" + products)
   numberOfProducts = json.groups.length;
 });
