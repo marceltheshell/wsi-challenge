@@ -688,13 +688,24 @@ let getPrice = (jsonPrice) => {
 let serialize = (blob) => {
 	
 	let response = {};
+	let images = [];
 
+	for (let i = 0; i < blob["images"].length; i++) {
+		images.push(blob["images"][i]["href"])
+	}
+
+	response["images"] = images;
 	response["price"] = getPrice(blob);
 	response["name"] = blob["name"];
 	response["hero"] = blob["hero"]["href"];
-	
+
 	return response;
 };
+
+let showCarousel = (thumbnails) => {
+	// make a carousel
+	$('#myModal').modal('show')
+}
 
 
 for (let i = 0; i < json["groups"].length; i++) {
@@ -704,33 +715,38 @@ for (let i = 0; i < json["groups"].length; i++) {
 	// creating DOM variables
 	let liNode = document.createElement("LI");
 	
-	let panelOuter = document.createElement("DIV");
-	panelOuter.className = "panel panel-default";
-
-	let panelHeader = document.createElement("DIV");
-	panelHeader.className = "panel-heading";
-
-	let panelBody = document.createElement("DIV");
- 	panelBody.className = "panel-body";
-
-	let heroImg = document.createElement("IMG");
-	heroImg.src = response["hero"];
-
-	let nameNode = document.createTextNode(response["name"]);
+	let cardOuter = document.createElement("DIV");
+	cardOuter.className = "card img-width";
 	
-	let priceNode = document.createTextNode(response["price"]);
-	
+	let cardImgHeader = document.createElement("IMG");
+	cardImgHeader.className = "card-img-top";
+	cardImgHeader.src = response["hero"];
+	cardImgHeader.addEventListener("click", function() { showCarousel(response["images"]) }, false);
 
+	let cardBody = document.createElement("DIV");
+	cardBody.className = "card-body";
 
+ 	let cardName = document.createElement("P");
+ 	cardName.className = "card-text";
+
+ 	let cardPrice = document.createElement("P");
+ 	cardPrice.className = "card-text font-bold";
+
+ 	let nameNode = document.createTextNode(response["name"]);
+ 	let priceNode = document.createTextNode(response["price"]);
 
 	//appending DOM variables
-	panelHeader.appendChild(heroImg);
-	panelBody.appendChild(nameNode);
-	panelBody.appendChild(priceNode);
-	// panelBody.appendChild(rando);
-	panelOuter.appendChild(panelHeader);
-	panelOuter.appendChild(panelBody);
-	liNode.appendChild(panelOuter);
+	cardName.appendChild(nameNode);
+	cardPrice.appendChild(priceNode);
+	
+	cardBody.appendChild(cardName)
+	cardBody.appendChild(cardPrice)
+
+	cardOuter.appendChild(cardImgHeader);
+	cardOuter.appendChild(cardBody);
+
+	liNode.appendChild(cardOuter);
+
 	document.getElementById("products").appendChild(liNode);
 
 

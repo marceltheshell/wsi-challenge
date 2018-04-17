@@ -5,3 +5,7 @@ ul {
 .font-bold {
   font-weight: bold;
 }
+
+.img-width {
+  width: 18rem;
+}
