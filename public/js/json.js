@@ -34,7 +34,7 @@ let serialize = (blob) => {
 
 	response["images"] = images;
 	response["price"] = getPrice(blob);
-	response["name"] = blob["name"];
+	response["name"] = blob["name"].toUpperCase();
 	response["hero"] = blob["hero"]["href"];
 
 	return response;
@@ -94,24 +94,21 @@ let appendData = (json) => {
 
 		// creating DOM variables
 		const liNode = document.createElement("li");
-		liNode.className = "list-inline-item col-xs-12 col-sm-4";
+		liNode.className = "list-inline-item col-xs-12 col-sm-4 li-item";
 
 		const divOuter = document.createElement("div");
-		divOuter.className = "card";
-		
-		const cardImgHeader = document.createElement("img");
-		cardImgHeader.className = "card-img-top";
-		cardImgHeader.src = response["hero"];
-		cardImgHeader.addEventListener("click", function() { showCarousel(response["images"]) }, false);
+		divOuter.className = "outer";
 
-		const cardBody = document.createElement("div");
-		cardBody.className = "card-body";
+		const img = document.createElement("img");
+		img.className = "img";
+		img.src = response["hero"];
+		img.addEventListener("click", function() { showCarousel(response["images"]) }, false);
 
-	 	const cardName = document.createElement("p");
-	 	cardName.className = "card-text";
+	 	const cardName = document.createElement("div");
+	 	cardName.className = "card-text container";
 
-	 	const cardPrice = document.createElement("p");
-	 	cardPrice.className = "card-text font-bold";
+	 	const cardPrice = document.createElement("div");
+	 	cardPrice.className = "card-price";
 
 	 	const nameNode = document.createTextNode(response["name"]);
 	 	const priceNode = document.createTextNode(response["price"]);
@@ -119,13 +116,9 @@ let appendData = (json) => {
 		//appending DOM variables
 		cardName.appendChild(nameNode);
 		cardPrice.appendChild(priceNode);
-		
-		cardBody.appendChild(cardName)
-		cardBody.appendChild(cardPrice)
-
-		divOuter.appendChild(cardImgHeader);
-		divOuter.appendChild(cardBody);
-
+		divOuter.appendChild(cardName)
+		divOuter.appendChild(cardPrice)
+		divOuter.appendChild(img);
 		liNode.appendChild(divOuter);
 
 		document.getElementById("products").appendChild(liNode);
