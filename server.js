@@ -34,7 +34,7 @@ fetch('https://www.westelm.com/services/catalog/v4/category/shop/new/all-new/ind
 		return response.json();
 	})
 	.then(function(data) {
-		response.send(data)
+		console.log(data)
 	});
 
 
