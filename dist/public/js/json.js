@@ -668,29 +668,26 @@ var serialize = function serialize(blob) {
 	return response;
 };
 
-var appendCarouselIndicator2 = function appendCarouselIndicator2(thumbnails) {
+var appendCarouselIndicator = function appendCarouselIndicator(thumbnails) {
 	var carouselIndicators = document.getElementsByClassName("carousel-indicators");
 	carouselIndicators.innerHTML = "";
 
 	for (var i = 0; i < thumbnails.length; i++) {
 
 		//creating the indicator li
-		var indicator = document.createElement("LI");
-		indicator.dataset.dataSlideTo = i.toString();
-		indicator.dataset.target = "#carousel";
-
-		//creating the image div
-		var carouselItem = document.createElement("DIV");
+		var li = document.createElement("LI");
+		li.dataset.dataSlideTo = i.toString();
+		li.dataset.target = "#carousel";
 
 		// setting first element to active class
 		if (i <= 0) {
-			indicator.className = "active";
+			li.className = "active";
 		}
-		carouselIndicators.appendChild(indicator);
+		carouselIndicators.appendChild(li);
 	}
 };
 
-var appendCarouselIndicator1 = function appendCarouselIndicator1(thumbnails) {
+var appendCarouselImg = function appendCarouselImg(thumbnails) {
 	var element = document.getElementById("carousel-inner");
 	element.innerHTML = "";
 
@@ -713,7 +710,7 @@ var appendCarouselIndicator1 = function appendCarouselIndicator1(thumbnails) {
 
 var showCarousel = function showCarousel(imgThumbnails) {
 	$('#myModal').modal('show');
-	appendCarouselIndicator1(imgThumbnails);
+	appendCarouselImg(imgThumbnails);
 };
 
 var _loop = function _loop(i) {

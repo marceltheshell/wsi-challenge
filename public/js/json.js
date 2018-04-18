@@ -702,29 +702,26 @@ let serialize = (blob) => {
 	return response;
 };
 
-let appendCarouselIndicator2 = (thumbnails) => {
+let appendCarouselIndicator = (thumbnails) => {
 	let carouselIndicators = document.getElementsByClassName("carousel-indicators");
 	carouselIndicators.innerHTML = "";
 
 	for (let i = 0; i < thumbnails.length; i++) {
 		
 		//creating the indicator li
-		let indicator = document.createElement("LI");
-		indicator.dataset.dataSlideTo = i.toString();
-		indicator.dataset.target = "#carousel";
-
-		//creating the image div
-		let carouselItem = document.createElement("DIV");
+		let li = document.createElement("LI");
+		li.dataset.dataSlideTo = i.toString();
+		li.dataset.target = "#carousel";
 		
 		// setting first element to active class
 		if (i <= 0) {
-			indicator.className = "active";
+			li.className = "active";
 		} 
-		carouselIndicators.appendChild(indicator);
+		carouselIndicators.appendChild(li);
 	}
 };
 
-let appendCarouselIndicator1 = (thumbnails) => {
+let appendCarouselImg = (thumbnails) => {
 	let element = document.getElementById("carousel-inner");
 	element.innerHTML = "";
 
@@ -748,7 +745,7 @@ let appendCarouselIndicator1 = (thumbnails) => {
 
 let showCarousel = (imgThumbnails) => {
 	$('#myModal').modal('show')
-	appendCarouselIndicator1(imgThumbnails);
+	appendCarouselImg(imgThumbnails);
 }
 
 
