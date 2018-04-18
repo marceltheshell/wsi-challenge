@@ -5,12 +5,9 @@ var https = require('https');
 var express = require('express');
 var bodyparser = require('body-parser');
 var path = require('path');
-
-// for the get
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
-
-// new express app
+var url = 'https://www.westelm.com/services/catalog/v4/category/shop/new/all-new/index.json';
 var app = express();
 
 // middleware
@@ -25,17 +22,17 @@ app.listen(PORT, function (err) {
 	if (err) throw err;
 });
 
-///
-var data = {};
-fetch('https://www.westelm.com/services/catalog/v4/category/shop/new/all-new/index.json').then(function (response) {
-	if (response.status >= 400) {
-		throw new Error("Bad response from server");
-	}
-	return response.json();
-}).then(function (data) {
-	console.log(data);
-});
+app.get("/wsiData", function (req, response) {
+	var body = "";
 
-app.get("/wsiData", function (req, res) {
-	res.json(data);
+	https.get(url, function (res) {
+		res.setEncoding("utf8");
+		res.on("data", function (data) {
+			body += data;
+		});
+		res.on("end", function () {
+			body = JSON.parse(body);
+			response.status(200).json(body);
+		});
+	});
 });

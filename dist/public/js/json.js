@@ -1,640 +1,12 @@
-"use strict";
+'use strict';
 
-var json = {
-	"id": "shop/new/all-new",
-	"name": "All New",
-	"groups": [{
-		"id": "metallic-square-lanterns-d5161",
-		"name": "Metallic Square Lanterns",
-		"links": {
-			"www": "https://www.westelm.com/products/metallic-square-lanterns-d5161/"
-		},
-		"priceRange": {
-			"regular": {
-				"high": 149,
-				"low": 24
-			},
-			"selling": {
-				"high": 119,
-				"low": 19
-			},
-			"type": "special"
-		},
-		"thumbnail": {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "thumbnail",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201810/0031/metallic-square-lanterns-m.jpg",
-			"height": 363
-		},
-		"hero": {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "hero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201810/0031/metallic-square-lanterns-m.jpg",
-			"height": 363
-		},
-		"images": [{
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "althero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201810/0031/metallic-square-lanterns-1-m.jpg",
-			"height": 363
-		}, {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "althero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201811/0001/metallic-square-lanterns-m.jpg",
-			"height": 363
-		}],
-		"swatches": [],
-		"messages": [],
-		"flags": [{
-			"bopisSuppress": false,
-			"rank": 3,
-			"id": "newcore"
-		}],
-		"reviews": {
-			"recommendationCount": 0,
-			"likelihood": 0,
-			"reviewCount": 0,
-			"averageRating": 0,
-			"id": "metallic-square-lanterns-d5161",
-			"type": "GROUP_REVIEWS"
-		}
-	}, {
-		"id": "terrace-lanterns-d5183",
-		"name": "Terrace Lanterns",
-		"links": {
-			"www": "https://www.westelm.com/products/terrace-lanterns-d5183/"
-		},
-		"priceRange": {
-			"regular": {
-				"high": 47,
-				"low": 39
-			},
-			"selling": {
-				"high": 47,
-				"low": 31
-			},
-			"type": "special"
-		},
-		"thumbnail": {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "thumbnail",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201808/0047/gold-glass-candleholders-m.jpg",
-			"height": 363
-		},
-		"hero": {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "hero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201808/0047/gold-glass-candleholders-m.jpg",
-			"height": 363
-		},
-		"images": [],
-		"swatches": [],
-		"messages": [],
-		"flags": [{
-			"bopisSuppress": false,
-			"rank": 3,
-			"id": "newcore"
-		}],
-		"reviews": {
-			"recommendationCount": 0,
-			"likelihood": 0,
-			"reviewCount": 0,
-			"averageRating": 0,
-			"id": "terrace-lanterns-d5183",
-			"type": "GROUP_REVIEWS"
-		}
-	}, {
-		"id": "faceted-lanterns-d2997",
-		"name": "Faceted Lanterns",
-		"links": {
-			"www": "https://www.westelm.com/products/faceted-lanterns-d2997/"
-		},
-		"priceRange": {
-			"selling": {
-				"high": 69,
-				"low": 49
-			}
-		},
-		"thumbnail": {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "thumbnail",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201811/0020/faceted-lanterns-m.jpg",
-			"height": 363
-		},
-		"hero": {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "hero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201811/0020/faceted-lanterns-m.jpg",
-			"height": 363
-		},
-		"images": [{
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "althero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201809/0086/faceted-lanterns-m.jpg",
-			"height": 363
-		}, {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "althero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201809/0034/faceted-lanterns-m.jpg",
-			"height": 363
-		}, {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "althero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201809/0045/faceted-lanterns-m.jpg",
-			"height": 363
-		}, {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "althero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201809/0078/faceted-lanterns-m.jpg",
-			"height": 363
-		}],
-		"swatches": [],
-		"messages": [],
-		"flags": [],
-		"reviews": {
-			"recommendationCount": 0,
-			"likelihood": 0,
-			"reviewCount": 0,
-			"averageRating": 0,
-			"id": "faceted-lanterns-d2997",
-			"type": "GROUP_REVIEWS"
-		}
-	}, {
-		"id": "sheer-metallic-belgian-linen-curtain-platinum-t4424",
-		"name": "Sheer Metallic Belgian Linen Curtain - Platinum",
-		"links": {
-			"www": "https://www.westelm.com/products/sheer-metallic-belgian-linen-curtain-platinum-t4424/"
-		},
-		"priceRange": {
-			"regular": {
-				"high": 79,
-				"low": 59
-			},
-			"selling": {
-				"high": 109,
-				"low": 69
-			}
-		},
-		"thumbnail": {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "thumbnail",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/sheer-metallic-belgian-linen-curtain-platinum-2-m.jpg",
-			"height": 363
-		},
-		"hero": {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "hero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/sheer-metallic-belgian-linen-curtain-platinum-m.jpg",
-			"height": 363
-		},
-		"images": [{
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "althero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/sheer-metallic-belgian-linen-curtain-platinum-3-m.jpg",
-			"height": 363
-		}, {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "althero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/sheer-metallic-belgian-linen-curtain-platinum-1-m.jpg",
-			"height": 363
-		}],
-		"swatches": [],
-		"messages": [],
-		"flags": [{
-			"bopisSuppress": false,
-			"rank": 3,
-			"id": "newcore"
-		}],
-		"reviews": {
-			"recommendationCount": 0,
-			"likelihood": 0,
-			"reviewCount": 0,
-			"averageRating": 0,
-			"id": "sheer-metallic-belgian-linen-curtain-platinum-t4424",
-			"type": "GROUP_REVIEWS"
-		}
-	}, {
-		"id": "sheer-metallic-belgian-linen-curtain-dusty-blush-t4425",
-		"name": "Sheer Metallic Belgian Linen Curtain - Dusty Blush",
-		"links": {
-			"www": "https://www.westelm.com/products/sheer-metallic-belgian-linen-curtain-dusty-blush-t4425/"
-		},
-		"priceRange": {
-			"regular": {
-				"high": 79,
-				"low": 59
-			},
-			"selling": {
-				"high": 109,
-				"low": 69
-			}
-		},
-		"thumbnail": {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "thumbnail",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/sheer-metallic-belgian-linen-curtain-dusty-blush-m.jpg",
-			"height": 363
-		},
-		"hero": {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "hero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/sheer-metallic-belgian-linen-curtain-dusty-blush-2-m.jpg",
-			"height": 363
-		},
-		"images": [{
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "althero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/sheer-metallic-belgian-linen-curtain-dusty-blush-3-m.jpg",
-			"height": 363
-		}, {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "althero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/sheer-metallic-belgian-linen-curtain-dusty-blush-1-m.jpg",
-			"height": 363
-		}],
-		"swatches": [],
-		"messages": [],
-		"flags": [{
-			"bopisSuppress": false,
-			"rank": 3,
-			"id": "newcore"
-		}],
-		"reviews": {
-			"recommendationCount": 0,
-			"likelihood": 0,
-			"reviewCount": 0,
-			"averageRating": 0,
-			"id": "sheer-metallic-belgian-linen-curtain-dusty-blush-t4425",
-			"type": "GROUP_REVIEWS"
-		}
-	}, {
-		"id": "embroidered-zigzag-arrow-pillow-covers-t4446",
-		"name": "Embroidered Zigzag Arrow Pillow Covers",
-		"links": {
-			"www": "https://www.westelm.com/products/embroidered-zigzag-arrow-pillow-covers-t4446/"
-		},
-		"price": {
-			"regular": 39,
-			"selling": 39
-		},
-		"thumbnail": {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "thumbnail",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/embroidered-zigzag-arrow-pillow-covers-1-m.jpg",
-			"height": 363
-		},
-		"hero": {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "hero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/embroidered-zigzag-arrow-pillow-covers-1-m.jpg",
-			"height": 363
-		},
-		"images": [{
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "althero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/embroidered-zigzag-arrow-pillow-covers-m.jpg",
-			"height": 363
-		}],
-		"swatches": [],
-		"messages": [],
-		"flags": [{
-			"bopisSuppress": false,
-			"rank": 3,
-			"id": "newcore"
-		}, {
-			"bopisSuppress": false,
-			"rank": 10,
-			"id": "handcrafted"
-		}],
-		"reviews": {
-			"recommendationCount": 0,
-			"likelihood": 0,
-			"reviewCount": 0,
-			"averageRating": 0,
-			"id": "embroidered-zigzag-arrow-pillow-covers-t4446",
-			"type": "GROUP_REVIEWS"
-		}
-	}, {
-		"id": "outdoor-ribbon-stripe-pillows-t4454",
-		"name": "Outdoor Ribbon Stripe Pillows",
-		"links": {
-			"www": "https://www.westelm.com/products/outdoor-ribbon-stripe-pillows-t4454/"
-		},
-		"price": {
-			"regular": 19,
-			"selling": 19
-		},
-		"thumbnail": {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "thumbnail",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/outdoor-ribbon-stripe-pillows-m.jpg",
-			"height": 363
-		},
-		"hero": {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "hero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/outdoor-ribbon-stripe-pillows-m.jpg",
-			"height": 363
-		},
-		"images": [{
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "althero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/outdoor-ribbon-stripe-pillow-frost-gray-m.jpg",
-			"height": 363
-		}, {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "althero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201808/0047/outdoor-contrast-trim-pillow-blue-teal-m.jpg",
-			"height": 363
-		}],
-		"swatches": [],
-		"messages": [],
-		"flags": [{
-			"bopisSuppress": false,
-			"rank": 3,
-			"id": "newcore"
-		}, {
-			"bopisSuppress": false,
-			"rank": 8,
-			"id": "handmade"
-		}],
-		"reviews": {
-			"recommendationCount": 0,
-			"likelihood": 0,
-			"reviewCount": 0,
-			"averageRating": 0,
-			"id": "outdoor-ribbon-stripe-pillows-t4454",
-			"type": "GROUP_REVIEWS"
-		}
-	}, {
-		"id": "solid-luster-velvet-pouf-regal-blue-t4502",
-		"name": "Solid Luster Velvet Pouf - Regal Blue",
-		"links": {
-			"www": "https://www.westelm.com/products/solid-luster-velvet-pouf-regal-blue-t4502/"
-		},
-		"price": {
-			"regular": 99,
-			"selling": 99
-		},
-		"thumbnail": {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "thumbnail",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/solid-luster-velvet-pouf-regal-blue-1-m.jpg",
-			"height": 363
-		},
-		"hero": {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "hero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/solid-luster-velvet-pouf-regal-blue-1-m.jpg",
-			"height": 363
-		},
-		"images": [{
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "althero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/solid-luster-velvet-pouf-regal-blue-m.jpg",
-			"height": 363
-		}, {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "althero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/solid-luster-velvet-pouf-stone-m.jpg",
-			"height": 363
-		}],
-		"swatches": [],
-		"messages": [],
-		"flags": [{
-			"bopisSuppress": false,
-			"rank": 3,
-			"id": "newcore"
-		}],
-		"reviews": {
-			"recommendationCount": 0,
-			"likelihood": 0,
-			"reviewCount": 0,
-			"averageRating": 0,
-			"id": "solid-luster-velvet-pouf-regal-blue-t4502",
-			"type": "GROUP_REVIEWS"
-		}
-	}, {
-		"id": "solid-luster-velvet-pouf-stone-t4503",
-		"name": "Solid Luster Velvet Pouf - Stone",
-		"links": {
-			"www": "https://www.westelm.com/products/solid-luster-velvet-pouf-stone-t4503/"
-		},
-		"price": {
-			"regular": 99,
-			"selling": 99
-		},
-		"thumbnail": {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "thumbnail",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201815/0025/solid-luster-velvet-pouf-stone-1-m.jpg",
-			"height": 363
-		},
-		"hero": {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "hero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201815/0025/solid-luster-velvet-pouf-stone-1-m.jpg",
-			"height": 363
-		},
-		"images": [{
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "althero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201815/0025/solid-luster-velvet-pouf-stone-m.jpg",
-			"height": 363
-		}, {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "althero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/solid-luster-velvet-pouf-stone-m.jpg",
-			"height": 363
-		}],
-		"swatches": [],
-		"messages": [],
-		"flags": [{
-			"bopisSuppress": false,
-			"rank": 3,
-			"id": "newcore"
-		}],
-		"reviews": {
-			"recommendationCount": 0,
-			"likelihood": 0,
-			"reviewCount": 0,
-			"averageRating": 0,
-			"id": "solid-luster-velvet-pouf-stone-t4503",
-			"type": "GROUP_REVIEWS"
-		}
-	}, {
-		"id": "colorblock-pop-edge-throw-t4498",
-		"name": "Colorblock Pop Edge Throw",
-		"links": {
-			"www": "https://www.westelm.com/products/colorblock-pop-edge-throw-t4498/"
-		},
-		"price": {
-			"regular": 39,
-			"selling": 39
-		},
-		"thumbnail": {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "thumbnail",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/colorblock-pop-edge-throw-1-m.jpg",
-			"height": 363
-		},
-		"hero": {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "hero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/colorblock-pop-edge-throw-1-m.jpg",
-			"height": 363
-		},
-		"images": [{
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "althero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/colorblock-pop-edge-throw-m.jpg",
-			"height": 363
-		}, {
-			"size": "m",
-			"meta": "",
-			"alt": "",
-			"rel": "althero",
-			"width": 363,
-			"href": "https://www.westelm.com/weimgs/rk/images/wcm/products/201813/0025/colorblock-pop-edge-throw-2-m.jpg",
-			"height": 363
-		}],
-		"swatches": [],
-		"messages": [],
-		"flags": [{
-			"bopisSuppress": false,
-			"rank": 3,
-			"id": "newcore"
-		}, {
-			"bopisSuppress": false,
-			"rank": 10,
-			"id": "handcrafted"
-		}],
-		"reviews": {
-			"recommendationCount": 0,
-			"likelihood": 0,
-			"reviewCount": 0,
-			"averageRating": 0,
-			"id": "colorblock-pop-edge-throw-t4498",
-			"type": "GROUP_REVIEWS"
-		}
-	}],
-	"totalPages": 46,
-	"categories": []
-};
+fetch('/wsiData', { method: 'GET' }).then(function (data) {
+	return data.json();
+}).then(function (json) {
+	appendData(json);
+}).catch(function (error) {
+	return console.log(error);
+});
 
 var getPrice = function getPrice(jsonPrice) {
 	var priceRange = jsonPrice["priceRange"];
@@ -642,11 +14,11 @@ var getPrice = function getPrice(jsonPrice) {
 	var productPrice = null;
 
 	if (priceRange === undefined) {
-		productPrice = "$" + price["selling"];
+		productPrice = '$' + price["selling"];
 	} else if (price === undefined) {
 		var low = priceRange["selling"]["low"];
 		var high = priceRange["selling"]["high"];
-		productPrice = "$" + low + " - " + "$" + high;
+		productPrice = '$' + low + ' - $' + high;
 	}
 	return productPrice;
 };
@@ -675,7 +47,7 @@ var appendCarouselIndicators = function appendCarouselIndicators(thumbnails) {
 	for (var i = 0; i < thumbnails.length; i++) {
 
 		//creating the indicator li
-		var li = document.createElement("LI");
+		var li = document.createElement("li");
 		li.dataset.dataSlideTo = i.toString();
 		li.dataset.target = "#carousel";
 
@@ -692,7 +64,7 @@ var appendCarouselImgs = function appendCarouselImgs(thumbnails) {
 	element.innerHTML = "";
 
 	for (var i = 0; i < thumbnails.length; i++) {
-		var carouselItem = document.createElement("DIV");
+		var carouselItem = document.createElement("div");
 
 		if (i <= 0) {
 			carouselItem.className = "carousel-item active";
@@ -700,7 +72,7 @@ var appendCarouselImgs = function appendCarouselImgs(thumbnails) {
 			carouselItem.className = "carousel-item";
 		}
 
-		var img = document.createElement("IMG");
+		var img = document.createElement("img");
 		img.className = "d-block w-100";
 		img.src = thumbnails[i];
 		carouselItem.appendChild(img);
@@ -714,50 +86,53 @@ var showCarousel = function showCarousel(imgThumbnails) {
 	appendCarouselIndicators(imgThumbnails);
 };
 
-var _loop = function _loop(i) {
-	//serializing response
-	var response = serialize(json["groups"][i]);
+var appendData = function appendData(json) {
+	var _loop = function _loop(i) {
+		//serializing response
+		var response = serialize(json["groups"][i]);
 
-	// creating DOM variables
-	var liNode = document.createElement("LI");
+		// creating DOM variables
+		var liNode = document.createElement("li");
+		liNode.className = "list-inline-item col-xs-12 col-sm-4";
 
-	var cardOuter = document.createElement("DIV");
-	cardOuter.className = "card img-width";
+		var divOuter = document.createElement("div");
+		divOuter.className = "card";
 
-	var cardImgHeader = document.createElement("IMG");
-	cardImgHeader.className = "card-img-top";
-	cardImgHeader.src = response["hero"];
-	cardImgHeader.addEventListener("click", function () {
-		showCarousel(response["images"]);
-	}, false);
+		var cardImgHeader = document.createElement("img");
+		cardImgHeader.className = "card-img-top";
+		cardImgHeader.src = response["hero"];
+		cardImgHeader.addEventListener("click", function () {
+			showCarousel(response["images"]);
+		}, false);
 
-	var cardBody = document.createElement("DIV");
-	cardBody.className = "card-body";
+		var cardBody = document.createElement("div");
+		cardBody.className = "card-body";
 
-	var cardName = document.createElement("P");
-	cardName.className = "card-text";
+		var cardName = document.createElement("p");
+		cardName.className = "card-text";
 
-	var cardPrice = document.createElement("P");
-	cardPrice.className = "card-text font-bold";
+		var cardPrice = document.createElement("p");
+		cardPrice.className = "card-text font-bold";
 
-	var nameNode = document.createTextNode(response["name"]);
-	var priceNode = document.createTextNode(response["price"]);
+		var nameNode = document.createTextNode(response["name"]);
+		var priceNode = document.createTextNode(response["price"]);
 
-	//appending DOM variables
-	cardName.appendChild(nameNode);
-	cardPrice.appendChild(priceNode);
+		//appending DOM variables
+		cardName.appendChild(nameNode);
+		cardPrice.appendChild(priceNode);
 
-	cardBody.appendChild(cardName);
-	cardBody.appendChild(cardPrice);
+		cardBody.appendChild(cardName);
+		cardBody.appendChild(cardPrice);
 
-	cardOuter.appendChild(cardImgHeader);
-	cardOuter.appendChild(cardBody);
+		divOuter.appendChild(cardImgHeader);
+		divOuter.appendChild(cardBody);
 
-	liNode.appendChild(cardOuter);
+		liNode.appendChild(divOuter);
 
-	document.getElementById("products").appendChild(liNode);
+		document.getElementById("products").appendChild(liNode);
+	};
+
+	for (var i = 0; i < json["groups"].length; i++) {
+		_loop(i);
+	}
 };
-
-for (var i = 0; i < json["groups"].length; i++) {
-	_loop(i);
-}

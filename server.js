@@ -3,13 +3,9 @@ const https = require('https');
 const express = require('express')
 const bodyparser = require('body-parser')
 const path = require('path')
-
-
-// for the get
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
-
-// new express app
+const url = 'https://www.westelm.com/services/catalog/v4/category/shop/new/all-new/index.json'
 const app = express()
 
 // middleware
@@ -24,21 +20,19 @@ app.listen(PORT, (err) => {
   if (err) throw err
 })
 
-///
-let data = {}
-fetch('https://www.westelm.com/services/catalog/v4/category/shop/new/all-new/index.json')
-	.then(function(response) {
-		if (response.status >= 400) {
-			throw new Error("Bad response from server");
-		}
-		return response.json();
-	})
-	.then(function(data) {
-		console.log(data)
+app.get("/wsiData", function (req, response) {
+	let body = "";
+
+	https.get(url, res => {
+		res.setEncoding("utf8");
+		res.on("data", data => {
+			body += data;
+		});
+		res.on("end", () => {
+			body = JSON.parse(body);
+			response.status(200).json(body);
+		});
 	});
-
-
-app.get("/wsiData", function (req, res) {
-	res.json(data);
+	
 })
 
