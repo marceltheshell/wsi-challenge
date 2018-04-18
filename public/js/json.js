@@ -703,8 +703,26 @@ let serialize = (blob) => {
 };
 
 let showCarousel = (thumbnails) => {
-	// make a carousel
 	$('#myModal').modal('show')
+	//dynamically append pictures
+	
+	let element = document.getElementById("carousel-inner");
+	element.innerHTML = "";
+
+	for (let i = 0; i < thumbnails.length; i++) {
+		let carouselItem = document.createElement("DIV");
+
+		if (i <= 0) {
+			carouselItem.className = "carousel-item active";
+		} else {
+			carouselItem.className = "carousel-item";
+		}
+
+		let img = document.createElement("IMG");
+		img.className = "d-block w-100";
+		img.src = thumbnails[i];
+		element.appendChild(img);
+	}
 }
 
 

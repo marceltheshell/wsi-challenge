@@ -9,3 +9,19 @@ ul {
 .img-width {
   width: 18rem;
 }
+
+.modal-body {
+	padding: 0;
+}
+
+.shaded-area {
+	
+}
+
+.carousel-indicators li {
+	opacity: 1;
+	border: solid 1px grey;
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+}

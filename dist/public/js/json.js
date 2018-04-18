@@ -669,8 +669,26 @@ var serialize = function serialize(blob) {
 };
 
 var showCarousel = function showCarousel(thumbnails) {
-	// make a carousel
 	$('#myModal').modal('show');
+	//dynamically append pictures
+
+	var element = document.getElementById("carousel-inner");
+	element.innerHTML = "";
+
+	for (var i = 0; i < thumbnails.length; i++) {
+		var carouselItem = document.createElement("DIV");
+
+		if (i <= 0) {
+			carouselItem.className = "carousel-item active";
+		} else {
+			carouselItem.className = "carousel-item";
+		}
+
+		var img = document.createElement("IMG");
+		img.className = "d-block w-100";
+		img.src = thumbnails[i];
+		element.appendChild(img);
+	}
 };
 
 var _loop = function _loop(i) {
