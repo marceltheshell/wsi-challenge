@@ -789,7 +789,9 @@ for (let i = 0; i < json["groups"].length; i++) {
 
 	liNode.appendChild(cardOuter);
 
-	document.getElementById("products").appendChild(liNode);
+	responsive.appendChild(cardOuter);
+
+	document.getElementById("products").appendChild(responsive);
 
 
 }

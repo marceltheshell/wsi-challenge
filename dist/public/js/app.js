@@ -1,6 +1,6 @@
 "use strict";
 
-var rootUrl = 'https://crossorigin.me/https://www.westelm.com/services/catalog/v4/category/shop/new/all-new/index.json';
+var rootUrl = 'https://www.westelm.com/services/catalog/v4/category/shop/new/all-new/index.json';
 
 var products = [];
 var numberOfProducts = 0;

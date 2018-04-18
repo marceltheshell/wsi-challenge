@@ -1,6 +1,6 @@
 "use strict";
 
-const rootUrl = 'https://crossorigin.me/https://www.westelm.com/services/catalog/v4/category/shop/new/all-new/index.json'
+const rootUrl = 'https://www.westelm.com/services/catalog/v4/category/shop/new/all-new/index.json'
 
 let products = []
 let numberOfProducts = 0
