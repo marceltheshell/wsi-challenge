@@ -85,6 +85,8 @@ ul {
 	color: #F0F0F0;
 	font-size: 0.6em;
 	left: 9px;
+	padding-left: 4px;
+	padding-right: 4px;
 }
 
 .hr-split-center{

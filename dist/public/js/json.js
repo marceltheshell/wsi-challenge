@@ -14,11 +14,11 @@ var getPrice = function getPrice(jsonPrice) {
 	var productPrice = null;
 
 	if (priceRange === undefined) {
-		productPrice = '$' + price["selling"];
+		productPrice = '$ ' + price["selling"];
 	} else if (price === undefined) {
 		var low = priceRange["selling"]["low"];
 		var high = priceRange["selling"]["high"];
-		productPrice = '$' + low + ' - $' + high;
+		productPrice = '$ ' + low + ' - $ ' + high;
 	}
 	return productPrice;
 };

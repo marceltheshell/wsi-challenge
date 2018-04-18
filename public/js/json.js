@@ -12,12 +12,12 @@ let getPrice = (jsonPrice) => {
 	let productPrice = null;
 	
 	if (priceRange === undefined) {
-		productPrice = `$${price["selling"]}`;
+		productPrice = `$ ${price["selling"]}`;
 
 	} else if (price === undefined) {
 		const low = priceRange["selling"]["low"];
 		const high = priceRange["selling"]["high"];
-		productPrice = `$${low} - $${high}` 
+		productPrice = `$ ${low} - $ ${high}` 
 	}
 	return productPrice;
 };
