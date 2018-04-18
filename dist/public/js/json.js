@@ -683,12 +683,7 @@ var appendCarouselIndicators = function appendCarouselIndicators(thumbnails) {
 		if (i <= 0) {
 			li.className = "active";
 		}
-		console.log(li);
 		carouselIndicators.appendChild(li);
-
-		// <!-- <li data-target="#carousel" data-slide-to="0" class="active"></li>
-		//           <li data-target="#carousel" data-slide-to="1"></li>
-		//           <li data-target="#carousel" data-slide-to="2"></li> -->
 	}
 };
 
