@@ -702,10 +702,29 @@ let serialize = (blob) => {
 	return response;
 };
 
-let showCarousel = (thumbnails) => {
-	$('#myModal').modal('show')
-	//dynamically append pictures
-	
+let appendCarouselIndicator2 = (thumbnails) => {
+	let carouselIndicators = document.getElementsByClassName("carousel-indicators");
+	carouselIndicators.innerHTML = "";
+
+	for (let i = 0; i < thumbnails.length; i++) {
+		
+		//creating the indicator li
+		let indicator = document.createElement("LI");
+		indicator.dataset.dataSlideTo = i.toString();
+		indicator.dataset.target = "#carousel";
+
+		//creating the image div
+		let carouselItem = document.createElement("DIV");
+		
+		// setting first element to active class
+		if (i <= 0) {
+			indicator.className = "active";
+		} 
+		carouselIndicators.appendChild(indicator);
+	}
+};
+
+let appendCarouselIndicator1 = (thumbnails) => {
 	let element = document.getElementById("carousel-inner");
 	element.innerHTML = "";
 
@@ -721,8 +740,15 @@ let showCarousel = (thumbnails) => {
 		let img = document.createElement("IMG");
 		img.className = "d-block w-100";
 		img.src = thumbnails[i];
-		element.appendChild(img);
+		carouselItem.appendChild(img);
+		element.appendChild(carouselItem);
 	}
+
+}
+
+let showCarousel = (imgThumbnails) => {
+	$('#myModal').modal('show')
+	appendCarouselIndicator1(imgThumbnails);
 }
 
 

@@ -668,10 +668,29 @@ var serialize = function serialize(blob) {
 	return response;
 };
 
-var showCarousel = function showCarousel(thumbnails) {
-	$('#myModal').modal('show');
-	//dynamically append pictures
+var appendCarouselIndicator2 = function appendCarouselIndicator2(thumbnails) {
+	var carouselIndicators = document.getElementsByClassName("carousel-indicators");
+	carouselIndicators.innerHTML = "";
 
+	for (var i = 0; i < thumbnails.length; i++) {
+
+		//creating the indicator li
+		var indicator = document.createElement("LI");
+		indicator.dataset.dataSlideTo = i.toString();
+		indicator.dataset.target = "#carousel";
+
+		//creating the image div
+		var carouselItem = document.createElement("DIV");
+
+		// setting first element to active class
+		if (i <= 0) {
+			indicator.className = "active";
+		}
+		carouselIndicators.appendChild(indicator);
+	}
+};
+
+var appendCarouselIndicator1 = function appendCarouselIndicator1(thumbnails) {
 	var element = document.getElementById("carousel-inner");
 	element.innerHTML = "";
 
@@ -687,8 +706,14 @@ var showCarousel = function showCarousel(thumbnails) {
 		var img = document.createElement("IMG");
 		img.className = "d-block w-100";
 		img.src = thumbnails[i];
-		element.appendChild(img);
+		carouselItem.appendChild(img);
+		element.appendChild(carouselItem);
 	}
+};
+
+var showCarousel = function showCarousel(imgThumbnails) {
+	$('#myModal').modal('show');
+	appendCarouselIndicator1(imgThumbnails);
 };
 
 var _loop = function _loop(i) {
