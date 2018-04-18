@@ -702,8 +702,8 @@ let serialize = (blob) => {
 	return response;
 };
 
-let appendCarouselIndicator = (thumbnails) => {
-	let carouselIndicators = document.getElementsByClassName("carousel-indicators");
+let appendCarouselIndicators = (thumbnails) => {
+	let carouselIndicators = document.getElementById("carousel-indicators");
 	carouselIndicators.innerHTML = "";
 
 	for (let i = 0; i < thumbnails.length; i++) {
@@ -721,7 +721,7 @@ let appendCarouselIndicator = (thumbnails) => {
 	}
 };
 
-let appendCarouselImg = (thumbnails) => {
+let appendCarouselImgs = (thumbnails) => {
 	let element = document.getElementById("carousel-inner");
 	element.innerHTML = "";
 
@@ -745,7 +745,8 @@ let appendCarouselImg = (thumbnails) => {
 
 let showCarousel = (imgThumbnails) => {
 	$('#myModal').modal('show')
-	appendCarouselImg(imgThumbnails);
+	appendCarouselImgs(imgThumbnails);
+	appendCarouselIndicators(imgThumbnails)
 }
 
 
