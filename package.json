@@ -1,7 +1,7 @@
 {
-  "name": "expresstemplate-static",
+  "name": "wsi app",
   "version": "1.0.0",
-  "description": "",
+  "description": "a vanillaJS/Node app for a WSI code challenge",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -24,5 +24,8 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "rimraf": "^2.6.2"
+  }, 
+  "engines": {
+    "node": "6.12.0"
   }
 }
